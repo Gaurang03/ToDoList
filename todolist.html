@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        <li>"new"- Add A Todo</li>
+        <li>"list"- List all Todos</li>
+        <li>"quit"- Quit App</li>
+        <li>"delete"- Remove Specific Todo</li>
+        <li>"deletetilllast"- Remove Todo from given index till last array element</li>
+    </ul>
+    <script>
+       var todos=[];
+var input =prompt("What would you like to do?");
+
+while(input!=="quit")
+{
+    if(input==="list")
+listTodos();
+else 
+if(input==="new")
+addTodo();
+else if(input==="delete")
+deleteTodo();
+else if(input==="deletetilllast")
+deleteTillLast();
+var input =prompt("What would you like to do?");
+}
+console.log("OK, YOU QUIT THE APP");
+function listTodos()
+{console.log("**********");
+todos.forEach(function(todo,i){
+    console.log(i + ":" + todo);
+});console.log("**********");
+}
+function addTodo()
+{var newTodo=prompt("Enter new todo");
+todos.push(newTodo);
+console.log("Added Todo");}
+function deleteTodo()
+{
+    var index=prompt("Enter index of todo to delete");
+    todos.splice(index,1);
+    console.log("Deleted Todo");
+}
+function deleteTillLast()
+{
+    var index=prompt("Enter index of todo to delete from");
+    todos.splice(index,todos.length-index);
+    console.log("Deleted Todo till last");
+}
+</script>
+</body>
+</html>
